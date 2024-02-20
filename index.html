@@ -1,115 +1,163 @@
-<?php
-  if(!isset($_SESSION))
-{
-   session_start();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-	<title>Centro ISI</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter" >
-		<div class="container-login100" >
-			<div class="wrap-login100">
-				<form name="form_login" class="login100-form validate-form" method="post" action="valida-login.php">
-					<span class="login100-form-title p-b-10">
-						Seja bem vindo
-					</span>
-					<span class="login100-form-title ">
-						<p class="" style="color: #880f0f;"><b><i>Centro</i>ISI</b></p>
-		                    
-					</span>
-					<?php
-		                        if(isset($_SESSION['loginErro'])){
-		                            echo $_SESSION['loginErro'];
-		                            unset($_SESSION['loginErro']);
-		                        }
-		                    ?>
-					<div class="wrap-input100 validate-input" data-validate = "Digite o usuário">
-						<input class="" type="hidden" name="valida_login">
-						<input class="input100" type="text" name="usuario">
-						<span class="focus-input100" data-placeholder="Usuário"></span>
-					</div>
+    <head>
+  
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Parte Frontal</title>
+        <link href="css/meucss.css" rel="stylesheet">
 
-					<div class="wrap-input100 validate-input" data-validate="Digite a senha">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="senha">
-						<span class="focus-input100" data-placeholder="Senha"></span>
-					</div>
 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
+        </head>
+      
+    <body>
 
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Esqueceste a sua senha?
-						</span>
+<div class="container-fluid">
 
-						<a class="txt2" href="recuperacao-de-senha.php">
-							Clique aqui
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
+    <div id='mensagem'></div>
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <div class="row-fluid">
 
-	<script type="text/javascript">
-		setTimeout(function(){
-	    	$("#erro").slideUp(1200);
-	    },1200);
-	</script>
+        <div class="card shadow mb-4">
 
-</body>
-</html>
+            <div class="card-header py-3">
+
+                <div class="divH m-0 font-weight-bold text-primary"><label>Parte frontal do BI</label></div>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="col-12">
+
+                    <form action="javascript: prova();" class="form-horizontal" method="POST" id="cadastrarAluno" enctype="multipart/form-data">
+
+                        <div class="row" style="">
+
+
+
+
+                            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 " >
+
+                                <div class="row">
+
+                                    <label class="modal-title" style="margin-bottom: 0px;">Dados Pessoais</label>
+                                        <hr style="width: 100% !important; height: 1px; background-color: #880f0f">
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                                            <div class="row">
+            
+                                                <div class="col-12">
+            
+                                                    <img id="output" src="css/user.webp" class="img-responsive col-12" ></img>
+            
+                                                </div>
+            
+                                            </div>
+            
+                                            <div class="row">
+            
+                                                <div class="col-12">
+            
+                                                    <div class="col-12">
+            
+                                                        <label for="url_foto" class="custom-file-label"><b>Selecione a Foto do tipo passe</b></label>
+            
+                                                        <input type="file"  accept="image/*" class="form-control custom-file-input in" id="url_foto" name="url_foto" onchange="loadFile(event)">
+            
+                                                    </div>
+            
+                                                </div>
+            
+                                            </div>
+            
+                                        </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                                        <label><b>Nome Nompleto:</b></label>
+                                        <input type="text" autofocus=""  class="input-xs form-control in" id='nome' value='' placeholder="Digite o nome completo" size="28"  required="">
+<br>
+                                      <script type="text/javascript">
+                                       function Concatena()
+                                             {
+                                     
+                                          var nome = document.getElementById('nome').value;
+                                            document.getElementById('nomeSacado').value=nome;
+                                             }
+    
+                                          </script>
+                                    
+                                              <label><b>Filhação:</b></label>
+                                        <input type="text" class="input-xs form-control in" name="pai" maxlength="70" placeholder="Digite o nome do pai" required="" >
+
+                                  <br>
+                                        <label><b>e:</b></label>
+                                        <input class="input-xs form-control in" name="mae" placeholder="Digite o nome da mae" required>
+                                       <br>
+                                  
+
+                                
+                                       
+                                           <label for="numerobi" class="form-label"><b>Bilhete de Identidade:</b></label>
+                                                 <input type="text" class="form-control" id="numerobi" name="numerobi" pattern="^[0-9]{9}[A-Z]{2}[0-9]{3}$" placeholder="000000000LA040" required>
+                                                 <br>
+                                                 <label><b>Assinatura do titular:</b></label>
+                                                 <input type='text'  id='nomeSacado' name='nomeSacado' size="58" onclick='Concatena();' class="input-xs form-control in" placeholder="preenchimento automatico"/>
+                                        <br>   
+                                                 <input  class="btn btn-success btn-icon-split" type="submit" name="Enter" value="Enter">
+                                        
+                                </div>
+                                                 <div class="valid-feedback">
+                                            
+                                           </div>
+                                         </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                         
+                                    
+
+                                
+                        </div>	
+
+                        <br>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    var loadFile = function (event) {
+
+var output = document.getElementById('output');
+
+output.src = URL.createObjectURL(event.target.files[0]);
+
+};
+    function prova(){
+        alert('prosseguindo para outra etapa')
+    window.location.href="formulariodois.html"
+    
+    }
+    
+    </script>

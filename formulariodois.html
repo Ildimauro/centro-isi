@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+  
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Parte Traseira</title>
+        <link href="css/meucss.css" rel="stylesheet">
+
+
+        </head>
+      
+    <body>
+ 
+
+           <form class="row g-3 needs-validation" method="post" action="javascript: frontal();" enctype="multipart/form-data">
+           <center><h2> <font color="blue">Parte Traseira</font></h2></center> 
+
+           <div class="col-md-3">
+            <div class="margem">
+              <label for="residencia" class="form-label"><b>Residência</b></label>
+              <input type="text" class="form-control" id="residencia" name="residencia" placeholder="Bairro" required>
+              <div class="invalid-feedback">
+              
+              </div>
+              </div>
+            </div>
+
+         <div class="col-md-3">
+         <div class="margem">
+            <label for="Natural" class="form-label"><b>Natural de</b> </label>
+                  <input type="text" class="form-control" id="Natural" name="Natural" placeholder="Municipio" required>
+                  </div>
+                  <div class="valid-feedback">
+             
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <div class="margem">
+               <label for="provincia" class="form-label"><b>Província de</b></label>
+                     <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" required>
+                     </div>
+                     <div class="valid-feedback">
+                
+               </div>
+             </div>
+
+  <div class="col-md-3">
+  <div class="margem">
+    <label for="data" class="form-label"><b>Data de Nascimento</b></label>
+    <input type="date" class="form-control" id="data" name="data" required="">
+				</div>
+    <div class="valid-feedback">
+    
+    </div>
+    </div>
+  </div>
+  
+<div class="col-md-3">
+<div class="margem">
+<label for="sexo" class="form-label"><b>Sexo:</b></label>
+<select class="form-control"  name="genero" id="sexo" required>
+<option value=""> Seleciona Aqui </option>
+<option value="Masculino"> Masculino </option>
+    <option value="Feminino"> Feminino </option>
+</select>
+    <div class="invalid-feedback">
+    </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="margem">
+      <label for="altura" class="form-label"><b>Altura(m):</b></label>
+      <input type="text" class="form-control" id="altura" name="altura" placeholder="1.71" required>
+      <div class="invalid-feedback">
+      
+      </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="margem">
+      <label for="estado" class="form-label"><b>Estado Civil:</b></label>
+      <select class="form-control"  name="estado" id="estado" required>
+      <option value=""> Seleciona Aqui </option>
+      <option value="Solteiro(a)">Solteiro(a)</option>
+          <option value="Casado(a)"> Casado(a)</option>
+          <option value="Divorciado(a)">Divorciado(a)</option>
+      </select>
+          <div class="invalid-feedback">
+          </div>
+          </div>
+        </div>
+
+        
+  <div class="col-md-3">
+    <div class="margem">
+      <label for="emissao" class="form-label"><b>Emitido em:</b></label>
+      <input type="date" class="form-control" id="emissao" name="emissao" required>
+          </div>
+      <div class="valid-feedback">
+      
+      </div>
+      </div>
+    </div>
+
+    
+  <div class="col-md-3">
+    <div class="margem">
+      <label for="validade" class="form-label"><b>Valido até:</b></label>
+      <input type="date" class="form-control" id="validade" name="validade" required>
+          </div>
+      <div class="valid-feedback">
+      
+      </div>
+      </div>
+    </div>
+  <center>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+  </div>
+
+</center>
+</form>
+
+
+<script type="text/javascript">
+  function frontal(){
+      alert('Dados Enviados com sucesso!')
+  window.location.href="index.html"
+  
+  }
+  
+  </script>
+</body>
+</html>
